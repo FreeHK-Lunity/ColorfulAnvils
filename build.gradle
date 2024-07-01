@@ -38,7 +38,7 @@ dependencies {
 
     modImplementation include('me.lucko:fabric-permissions-api:0.2-SNAPSHOT')
     modImplementation include("net.fabricmc:fabric-language-kotlin:${project.fabric_kotlin_version}")
-    modImplementation include("eu.pb4:placeholder-api:2.1.1+1.20")
+    modImplementation include("eu.pb4:placeholder-api:2.4.0-pre.1+1.20.5")
 }
 
 processResources {
@@ -51,14 +51,14 @@ processResources {
 
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
-    it.options.release = 17
+    it.options.release = 21
 }
 
 java {
     withSourcesJar()
 
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21	
 }
 
 jar {
@@ -81,4 +81,4 @@ publishing {
     }
 }
 
-compileKotlin.kotlinOptions.jvmTarget = "17"
+compileKotlin.kotlinOptions.jvmTarget = "21"
